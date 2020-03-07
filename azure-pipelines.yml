@@ -88,6 +88,11 @@ steps:
     codeCoverageTool: 'cobertura'
     summaryFileLocation: '$(Build.SourcesDirectory)/**/coverage.cobertura.xml'
 
+- task: DotNetCoreInstaller@0
+  displayName: 'Use .NET Core SDK 2.2.103 For Sonar Cloud'
+  inputs:
+    version: '2.2.103'
+
 - task: SonarCloudAnalyze@1
   displayName: 'Run Code Analysis'
 
